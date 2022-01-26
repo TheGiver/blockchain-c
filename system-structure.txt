@@ -1,0 +1,45 @@
+Blockchain Programming Fundamentals:
+    * Hashing:
+        + Fundamentals of hashing:
+            Hashing is a mathematical process that takes in parameters and uses them to generate an irreversible fixed length alphanumeric string. 
+            Hashing functions have certain characteristics that make them desirable in the Blockchain field, which includes:
+            a. They are one way functions:
+                It is easy to compute a hash given an input but it is impossible to calculate the input given a hash. 
+            b. Given the same input, the same exact hash will be generated everytime given that we are using the same hash function. 
+            c. It is impossible to find distinct inputs that yield the same hash. 
+
+        + Importance of hashing:
+            Blockchain relies heavily on hashing. The idea is that in a Blockchain, we have an ordered chain of blocks such that each block contains the following 
+            information:
+            a. Hash of the previous block 
+            b. List of transactions
+            c. Hash of itself 
+
+            --> Example:
+                - Consider the following simple block: [0, {X -> $100 -> Y}, 91b452]
+                    . Since this is the first block of the Blockchain, the hash of the previous block is 0.
+                    . There is only 1 transaction in the list of transactions 
+                    . The final block is the hash of the following block
+                    . A block where the hash of the previous block is 0 is termed as a Genesis Block. In other words, a genesis block is basically the very first 
+                      block in a Blockchain. 
+
+                - Suppose we want to add some more blocks to this blockchain (i.e, we want to persist more transactions taking place on the blockchain) and let that block 
+                  be as folows: [91b452, {Y -> $20 -> Z, x -> $10 -> P}, 8ab32k]
+                    . 91b452 is the hash of the previous block 
+                    . There are 2 transactions in the list of transactions 
+                    . 8ab32k is the hash of the new block 
+
+            --> Visualisation:
+                The previous example can be visualised as a linkedlist where each node contains the infomation previously discussed and links itself to the next node. 
+
+            The reason hashing is important is that without it the blockchain would not be as secure as it is now, which might affect its attractiveness and usecases. For 
+            instance, if the blockchain did not have the same level of security as it actually does, then people would not feel safe relying on it to hold their transactions 
+            and carry sensitive information. But this security does not only come from the fact that a carefully desiged one way function is put in place, but also relies on another 
+            factor which is the data-structure being used and the way the data has been placed within the data-structure. The segment below will explain more about this. 
+
+            --> What is so special about this "data structure"?
+                The special thing about this data structure is the extra level of security that it adds to the blockchain; The idea is that if someone were to mutilate the chain 
+                by altering a transaction in any block, then the hash value of that block will change which will affect all subsequent blocks. 
+
+        + Hashing Formula:
+            hash = hash_function(list of transactions, hash of the previous block);
