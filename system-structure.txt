@@ -43,3 +43,37 @@ Blockchain Programming Fundamentals:
 
         + Hashing Formula:
             hash = hash_function(list of transactions, hash of the previous block);
+
+    * Blocks:
+        + What is a block in a Blockchain?
+            Blocks are data structures within the blockchain database, where transaction data are permanently recorded. A block records some or all transactions that have not yet 
+            been validated by the network. Once all the transactions in the block get validated, the block can be marked as closed and a new block is created for storing and validating 
+            new transactions taking place on the blockchain.
+
+        + How does a block work in a Blockchain?
+            A block stores information which includes:
+            a. A magic number:
+                A number containing specific values that indicate that this block belongs to a particular network 
+            b. Blocksize:
+                A number that indicate the maximum number of bits this block could store 
+            c. Block header:
+                Contains information about the block 
+            d. Transaction counter :
+                Stores the amount of transactions that are currently in the block 
+            e. Transactions:
+                Keeps a record of all the transactions that took place on the network but have not yet been validated 
+
+            The largest element is the transactions element as it contains the most amount of information. This is followed by the block header which includes additional 
+            information such as:
+            a. Version:
+                The version of the cryptocurrency being used
+            b. Previous block hash:
+                Contains the hash of the previous block's header 
+            c. Hash Merkle root:
+                Hash of transactions in the Merkle tree of the current block 
+            d. Time:
+                A timestamp to place the block in the chain 
+            e. Bits:
+                The difficulty rating of the target hash. In other words, this is an indicator of how difficult it is to solve the nonce
+            f. Nonce:  
+                The encrypted number that the miner needs to solve to verify the block and close it 
