@@ -108,12 +108,3 @@ Blockchain Programming Fundamentals:
 
             If we were to take the example above and apply it to the blockchain community, cryptocurrencies to be specific, then we would be asking millions of users to take a guess and 
             the number I would be thinking of would be a 64-digit hexadecimal number. It would therefore be really difficult to guess the right answer.   
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-System Specifications:
-    * Client:
-        + Main Menu:
-            . 
-
-        + Account Related:
-            . A client must have a <public,private> key pair
