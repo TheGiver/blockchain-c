@@ -1,0 +1,95 @@
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+System Specifications:
+    * Client:
+        + Main Menu:
+            . Setup methods that will take care of:
+                a. 
+
+            . A list of possible actions that the user could take
+                a. Ask for help 
+                b. View their transaction history 
+                c. Post a transaction  
+                d. Post a message 
+                e. Receive a message 
+                f. 
+
+        + Account Related:
+            . A client must have a <public,private> key pair
+
+    * Blockchain:
+        + Specifications:
+            . Have the ability to hash 
+            . Have the ability to store transactions and posts made to a block 
+            . Have the ability to hash both the transactions and posts made 
+
+        + Functionalities:
+            . Hashing (SHA256)
+                a. Hash a block 
+                b. Hash a transaction 
+                c. Hash a post 
+            . Create a new blockchain 
+            . Destoy an existing blockchain
+            . Persist a transaction record 
+            . Persist a published post 
+            . Append a block to the chain 
+            . Print a block on the chain 
+            . Validate posts 
+            . Extract transactions
+            . Extract posts 
+            . Validate proof 
+            . Generate RSA keys 
+            . Read from and Write RSA keys to file 
+            . Destroy keys 
+            . Sign a message
+            . Verify a message 
+            . 
+
+    * Utilities:
+        + External: 
+            --> Generators:
+                . An RSA key generator 
+
+            --> Mutex:
+                . The client might have to be multi-threaded 
+
+        + Internal:
+            --> Linkedlist:
+                . Create a list 
+                . Destroy a list 
+                . Create a node
+                . Append a node 
+                    a. Front of the list 
+                    b. Back of the list 
+                . Delete a node 
+                    a. from any position in the list 
+                . Print the list's content:
+                    a. Entire list 
+                        1. The number of elements 
+                        2. The content of each node in the list 
+                    b. Specific node 
+                        1. The content of that node if it exists 
+                . Search for a particular node:
+                    a. Given a specific data to look for in each node 
+                . Map a function to all elements of the list 
+
+            --> Binary Hash Tree:
+                . Create a hash tree 
+                . Create a node 
+                . Append a node to the tree  
+                . Remove a node from the tree 
+                . 
+
+            --> Dictionary:
+                . 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Protocol:
+    * Client Registration:
+        When a client decides to open a wallet on the blockchain, they will be given both a public and a private key. 
+        The idea of key generation is not yet clear and should be looked into.
+        The client or the blockchain system will then share that client's public key with all nodes on the network. 
+
+    * Requesting a transaction:
+        When a client requests a transaction, the request gets authenticated on the blockchain using the client's public key. 
+        
+    * 

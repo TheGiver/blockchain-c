@@ -108,3 +108,12 @@ Blockchain Programming Fundamentals:
 
             If we were to take the example above and apply it to the blockchain community, cryptocurrencies to be specific, then we would be asking millions of users to take a guess and 
             the number I would be thinking of would be a 64-digit hexadecimal number. It would therefore be really difficult to guess the right answer.   
+
+    * RSA Key Generation:
+        + Wallet creation:
+            When a client creates a wallet on the blockchain system, they are given a public and a private key that could be used for authentication and authorization purposes and an 
+            address. The generation of an address begins with the generation of a private key. The generation of the public key is done using a known algorithm which will be discussed 
+            in later segments. Following the generation of the client's public and private keys, the address can be easily generated as it is a shorter respresentative form of the public 
+            address. 
+
+        + 
