@@ -1,95 +1,25 @@
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-System Specifications:
-    * Client:
-        + Main Menu:
-            . Setup methods that will take care of:
-                a. 
+------------------------------------
+Contracts:
+    * ArrayList.h:
+        This will allow us to store a list of transactions with an unknown number of elements. 
 
-            . A list of possible actions that the user could take
-                a. Ask for help 
-                b. View their transaction history 
-                c. Post a transaction  
-                d. Post a message 
-                e. Receive a message 
-                f. 
+    * Block.h:
+        This will allow us to compute a hash of a block. 
 
-        + Account Related:
-            . A client must have a <public,private> key pair
+    * Blockchain.h:
+        This will allow us to create a new block, perform proof of work, add a transaction, mine, validate if the proof 
+        generated is correct.
 
-    * Blockchain:
-        + Specifications:
-            . Have the ability to hash 
-            . Have the ability to store transactions and posts made to a block 
-            . Have the ability to hash both the transactions and posts made 
+------------------------------------
+Data Structures
+    * Block structure:
+        As we previously mentioned, the blockchain consists of a series of connected blocks. Each block contains a list 
+        of transactions and some additional information. To represent the block chain, we need a struct to represent each 
+        block and a way to connect all these blocks together. 
 
-        + Functionalities:
-            . Hashing (SHA256)
-                a. Hash a block 
-                b. Hash a transaction 
-                c. Hash a post 
-            . Create a new blockchain 
-            . Destoy an existing blockchain
-            . Persist a transaction record 
-            . Persist a published post 
-            . Append a block to the chain 
-            . Print a block on the chain 
-            . Validate posts 
-            . Extract transactions
-            . Extract posts 
-            . Validate proof 
-            . Generate RSA keys 
-            . Read from and Write RSA keys to file 
-            . Destroy keys 
-            . Sign a message
-            . Verify a message 
-            . 
+    * Connecting the blocks in the chain:
+        At first, I thought that we need to create an linkedlist to keep track of the ordering of the block. However, I might 
+        be wrong. It might be possible to maintain a dynamic array of blocks and have each block store the hash of the previous 
+        block. 
 
-    * Utilities:
-        + External: 
-            --> Generators:
-                . An RSA key generator 
-
-            --> Mutex:
-                . The client might have to be multi-threaded 
-
-        + Internal:
-            --> Linkedlist:
-                . Create a list 
-                . Destroy a list 
-                . Create a node
-                . Append a node 
-                    a. Front of the list 
-                    b. Back of the list 
-                . Delete a node 
-                    a. from any position in the list 
-                . Print the list's content:
-                    a. Entire list 
-                        1. The number of elements 
-                        2. The content of each node in the list 
-                    b. Specific node 
-                        1. The content of that node if it exists 
-                . Search for a particular node:
-                    a. Given a specific data to look for in each node 
-                . Map a function to all elements of the list 
-
-            --> Binary Hash Tree:
-                . Create a hash tree 
-                . Create a node 
-                . Append a node to the tree  
-                . Remove a node from the tree 
-                . 
-
-            --> Dictionary:
-                . 
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-Protocol:
-    * Client Registration:
-        When a client decides to open a wallet on the blockchain, they will be given both a public and a private key. 
-        The idea of key generation is not yet clear and should be looked into.
-        The client or the blockchain system will then share that client's public key with all nodes on the network. 
-
-    * Requesting a transaction:
-        When a client requests a transaction, the request gets authenticated on the blockchain using the client's public key. 
-        
-    * 
+        This suggests that I might need to build an arraylist utility.
