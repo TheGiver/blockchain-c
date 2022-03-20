@@ -1,4 +1,4 @@
-#include "linkedlist.h"
+#include "arraylist.h"
 
 #define SUCCESS 1 
 #define FAILURE 0
