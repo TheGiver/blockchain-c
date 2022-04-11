@@ -1,5 +1,5 @@
 typedef struct transaction {
-    char * sender; 
-    char * receiver;
+    char sender[255]; 
+    char receiver[255];
     double amount;
 } transaction_t;
