@@ -1,8 +1,5 @@
 #include "arraylist.h"
 
-#define SUCCESS 1 
-#define FAILURE 0
-
 long INITIAL_LENGTH = 10;
 long RESIZE_BY = 20;
 long currentLength = 0; 
@@ -24,7 +21,7 @@ int init() {
 
 int add(transaction_t transaction) {
     if(transactions == NULL) {  
-        fprintf(stderr, "***************** Error: Failed to add a transaction to the system | Reason: Transactions list not initialized...");
+        fprintf(stderr, "***************** Error: Failed to add a transaction to the system | Reason: Transactions list not initialized...\n");
         return FAILURE;
     }
 
@@ -45,7 +42,7 @@ int add(transaction_t transaction) {
 
 transaction_t* get_all_transactions() {
     if(transactions == NULL) {  
-        fprintf(stderr, "***************** Error: Failed to add a transaction to the system | Reason: Transactions list not initialized...");
+        fprintf(stderr, "***************** Error: Failed to add a transaction to the system | Reason: Transactions list not initialized...\n");
         return NULL;
     }
     return transactions;
@@ -57,12 +54,12 @@ long size() {
 
 static bool is_transaction_valid(transaction_t transaction) {
     if(transaction.amount <= 0) {
-        fprintf(stderr, "***************** Error: Invalid transaction | Reason: Transaction amount is less than or equal to zero");
+        fprintf(stderr, "***************** Error: Invalid transaction | Reason: Transaction amount is less than or equal to zero\n");
         return false;
     }
 
     if(transaction.receiver == NULL || transaction.sender == NULL) {
-        fprintf(stderr, "***************** Error: Invalid transaction | Reason: Sender or Beneficiary details are invalid");
+        fprintf(stderr, "***************** Error: Invalid transaction | Reason: Sender or Beneficiary details are invalid\n");
         return false;
     }
 
@@ -73,7 +70,7 @@ static int resize_and_reallocate_data() {
     currentLength += RESIZE_BY;
     transaction_t * newRegion = (transaction_t *) realloc(transactions, currentLength);
     if(newRegion == NULL) {
-        fprintf(stderr, "***************** Error: Failed to resize the list | Reason: Memory reallocation failed");
+        fprintf(stderr, "***************** Error: Failed to resize the list | Reason: Memory reallocation failed\n");
         return FAILURE;
     }
     memcpy(newRegion, transactions, currNumOfElements*sizeof(transaction_t));

@@ -2,7 +2,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
-#include "./common/common.h"
+#include "../common/common.h"
 
 int init();
 
